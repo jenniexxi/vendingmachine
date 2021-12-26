@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자판기</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="js/index.js"></script>
+</head>
+<body>
+	<div class="container-fluid3">
+		<div class="row">
+			<div ID="head" class = "col-xs-12" style="background-color:lavender;">
+			<h1>자판기</h1>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-xs-3" style="background-color:lavender;">
+                <img class="lpitem" src="img/album-1.jpeg" style="width: 50px;height: 50px;"/>
+                <div class="item" id="item1" onClick="buy(this)">
+                    <span class="price">20000</span><span class="type">원</span>
+                </div>
+			</div>
+			<div class="col-xs-3" style="background-color:lavender;">
+                <img class="lpitem" src="img/album-1.jpeg" style="width: 50px;height: 50px;"/>
+                <div class="item" id="item2" onClick="buy(this)">
+                    <span class="price">70000</span><span class="type">원</span>
+                </div>
+			</div>
+			<div class="col-xs-3" style="background-color:lavender;">
+                <img class="lpitem" src="img/album-1.jpeg" style="width: 50px;height: 50px;"/>
+                <div class="item" id="item3" onClick="buy(this)">
+                    <span class="price">100000</span><span class="type">원</span>
+                </div>
+			</div>
+			<div class="col">
+				<div class="side">
+                    <div class="won">투입금액</div>
+                    <input id= "moneycount" type="text" value="0" readonly/><span class="won">원</span>
+                </div>
+                <button type="button" onClick="restReturn()">반환</button>
+                <div class="money">
+                    <button id="5000" value="5000" onClick="handleCash(this)"><img src="img/5000.jpeg" style="width: 80px;height: 50px;"></button>
+                    <button id="10000" value="10000" onClick="handleCash(this)"><img src="img/10000.jpeg" style="width: 80px;height: 50px;"></button>
+                    <button id="50000" value="50000" onClick="handleCash(this)"><img src="img/50000.jpeg" style="width: 80px;height: 50px;"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

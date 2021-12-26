@@ -1,0 +1,13 @@
+.item{
+    width: 100px;
+    height: 100px;
+    background-color: #f9f9f9;
+}
+.item.on{
+    background-color: yellow;
+}
+.item .price{
+}
+.item .type{
+
+}
