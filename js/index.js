@@ -36,6 +36,7 @@ function buy(goods){
 
 function restReturn() {
     updateCash(-1 * currentCash);
+    changeActive();
 }
 
 
