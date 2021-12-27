@@ -1,13 +1,95 @@
-.item{
-    width: 100px;
-    height: 100px;
-    background-color: #f9f9f9;
+@charset "utf-8";
+@import url("reset.css");
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+  padding: 30px 30px 50px;
+  border-radius: 3px;
+  background: #b095bf;
 }
-.item.on{
-    background-color: yellow;
+.head_part {
 }
-.item .price{
+.display_part {
+  overflow: hidden;
+  padding-bottom: 30px;
 }
-.item .type{
-display: block;
+.entrance_part {
+  width: 90%;
+  text-align: right;
+  margin: 0 auto;
+  border-top: 3px solid #881bc0;
+  padding-top: 30px;
+}
+
+.head_part h1 {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 0 20px;
+  color: #222;
+}
+.display_part li {
+  float: left;
+  width: 29%;
+  text-align: center;
+  margin: 2%;
+}
+.display_part .display_img {
+  width: 80%;
+  border-radius: 3px;
+}
+.display_part .item {
+  width: 80%;
+  height: 30px;
+  line-height: 29px;
+  background: #fff;
+  border-radius: 3px;
+  margin: 10px auto 0 auto;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.display_part .item.on {
+  background-color: #fe4018;
+  color: #fff;
+}
+.display_part .item.on .price {
+  color: #fff;
+}
+.entrance_part h2 {
+  font-size: 20px;
+  color: #222;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+.entrance_part button {
+  margin-left: 10px;
+}
+.entrance_part .btn_money img {
+  width: 92px;
+  height: 45px;
+}
+.entrance_part .show_amount {
+  padding-top: 20px;
+}
+.entrance_part .show_input {
+  border: none;
+  width: 120px;
+  height: 36px;
+  border-radius: 3px;
+  text-align: right;
+  font-size: 16px;
+  padding-right: 10px;
+}
+.entrance_part .won {
+  font-size: 18px;
+}
+.entrance_part .btn_return {
+  width: 60px;
+  height: 36px;
+  border-radius: 3px;
+  font-size: 16px;
+  color: #fff;
+  background: #881bc0;
 }
