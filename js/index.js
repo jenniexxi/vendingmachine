@@ -2,9 +2,10 @@ let currentCash = 0;
 
 const item = document.getElementsByClassName("item");
 const price = document.getElementsByClassName("price");
+const buttons = document.querySelectorAll(".btn_money button");
 
 function handleCash(inputMoney) {
-    updateCash(inputMoney.value);
+    updateCash(inputMoney.target.value);
     changeActive();
 }
 
@@ -39,13 +40,6 @@ function restReturn() {
     changeActive();
 }
 
-
-
-
-
-
-
-
-
-
-
+buttons.forEach( (button) => {
+    button.addEventListener('click', handleCash)
+});
