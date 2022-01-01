@@ -104,9 +104,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-.swiper-wrapper{
-  overflow: hidden;
-}
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -166,6 +163,9 @@
     width: 28% !important;
     float: left;
     margin: 2%;
+  }
+  .swiper-wrapper{
+    overflow: hidden;
   }
   
 
