@@ -20,38 +20,38 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img class="display_img" src="img/album01.png" alt="비틀즈 앨범" />
-            <div class="item" id="item1" onClick="buy(this)">
+            <img class="display_img" id="popimg01" src="img/album01.png" alt="비틀즈 앨범" />
+            <div class="item" id="item01">
               <span class="price">29900</span>원
             </div>
           </div>
           <div class="swiper-slide">
-            <img class="display_img" src="img/album02.png" alt="adoy 앨범" />
-            <div class="item" id="item2" onClick="buy(this)">
+            <img class="display_img" id="popimg02" src="img/album02.png" alt="adoy 앨범" />
+            <div class="item" id="item02">
               <span class="price">65000</span>원
             </div>
           </div>
           <div class="swiper-slide">
-            <img class="display_img" src="img/album03.png" alt="bts 앨범" />
-            <div class="item" id="item3" onClick="buy(this)">
+            <img class="display_img" id="popimg03" src="img/album03.png" alt="bts 앨범" />
+            <div class="item" id="item03">
               <span class="price">87500</span>원
             </div>
           </div>
           <div class="swiper-slide">
             <img class="display_img" src="img/album04.png" alt="아이유 앨범" />
-            <div class="item" id="item4" onClick="buy(this)">
+            <div class="item" id="item04">
               <span class="price">70300</span>원
             </div>
           </div>
           <div class="swiper-slide">
             <img class="display_img" src="img/album05.png" alt="Honne 앨범" />
-            <div class="item" id="item5" onClick="buy(this)">
+            <div class="item" id="item05">
               <span class="price">42100</span>원
             </div>
           </div>
           <div class="swiper-slide">
             <img class="display_img" src="img/album06.png" alt="bts 앨범" />
-            <div class="item" id="item6" onClick="buy(this)">
+            <div class="item" id="item06">
               <span class="price">10900</span>원
             </div>
           </div>
@@ -74,7 +74,7 @@
         <div class="show_amount">
           <input id="moneycount" class="show_input" type="text" value="0" readonly />
           <span class="won">원</span>
-          <button type="button" class="btn_return" onClick="restReturn()">반환</button>
+          <button type="button" class="btn_return">반환</button>
         </div>
       </div>
       <div class="entrance">
@@ -85,32 +85,30 @@
           <button id="10cent" value="0.10">$ 0.10</button>
           <button id="25cent" value="0.25">$ 0.25</button>
           <button id="50cent" value="0.50">$ 0.50</button>
-          <button id="1" value="1">$ 1</button>
-          <button id="2" value="2">$ 2</button>
-          <button id="5" value="5">$ 5</button>
-          <button id="10" value="10">$ 10</button>
-          <button id="20" value="20">$ 20</button>
-          <button id="50" value="50">$ 50</button>
+          <button id="1dollar" value="1">$ 1</button>
+          <button id="2dollar" value="2">$ 2</button>
+          <button id="5dollar" value="5">$ 5</button>
+          <button id="10dollar" value="10">$ 10</button>
+          <button id="20dollar" value="20">$ 20</button>
+          <button id="50dollar" value="50">$ 50</button>
+          <button id="100dollar" value="100">$ 100</button>
         </div>
         <div class="show_amount">
-          <input id="moneycount" class="show_input" type="text" value="0" readonly />
-          <span class="won">원</span>
-          <button type="button" class="btn_return" onClick="restReturn()">
-            반환
-          </button>
+          <input id="dollarmoneycount" class="show_input" type="text" value="0" readonly />
+          <span class="dollar">Dollar</span>
+          <button type="button"  class="btn_return">반환</button>
         </div>
       </div>
     </div>
 
     <div class="receive_part">
-      <div class="receive">
-        <h2>받는 곳</h2>
-        <img src="img/album03.png" alt="방탄소년단 앨범" />
+      <div class="receive" id = "receive_list">
+      <h2>받는 곳</h2>
       </div>
       <div class="return">
         <div class="group-won">
-          <h2>반환된 금액 <span class="type">(단위 :원)</span></h2>
-          <table>
+          <h2>반환된 금액 <span class="type"></span></h2>
+          <table id = "retValuebody">
             <colgroup>
               <col width="50%" />
               <col width="50%" />
@@ -119,101 +117,31 @@
               <th scope="col">단위</th>
               <th scope="col">수량</th>
             </thead>
-            <tbody>
-              <tr>
-                <td>100원</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>500원</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>1000원</td>
-                <td>2</td>
-              </tr>
-              <tr>
-                <td>5000원</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>10000원</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>50000원</td>
-                <td>0</td>
-              </tr>
+            <tbody>        
             </tbody>
           </table>
           <div class="amount">
-            총 금액 : <span class="sum">17000</span><span class="type"> 원</span>
-          </div>
-        </div>
-        <div class="group-won">
-          <h2>반환된 금액 <span class="type">(단위 :$)</span></h2>
-          <table>
-            <colgroup>
-              <col width="50%" />
-              <col width="50%" />
-            </colgroup>
-            <thead>
-              <th scope="col">단위</th>
-              <th scope="col">수량</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>$ 0.01</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>$ 0.05</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>$ 0.10</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>$ 0.25</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>$ 0.50</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>$ 1</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>$ 2</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>$ 5</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>$ 10</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>$ 20</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>$ 50</td>
-                <td>0</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="amount">
-            총 금액 : <span class="type">$ </span><span class="sum">12.55</span>
+            총 금액 : <span class="sum" id = "returnTotal">0</span><span class="type" id = "moneyname"> 원</span>
           </div>
         </div>
       </div>
     </div>
+
+
+    <div class="popup" id="pop01" style="display: none;">
+      안녕하세요.......1
+    </div>
+
+    <div class="popup" id="pop02" style="display: none;">
+      안녕하세요.......2
+    </div>
+
+    <div class="popup" id="pop03" style="display: none;">
+      안녕하세요.......3
+    </div>
+
+
+
 
   </div>
   <script src="js/index.js"></script>
