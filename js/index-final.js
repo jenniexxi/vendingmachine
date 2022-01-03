@@ -1,5 +1,5 @@
 let currentCash = 0;
-const exchangeRate = 1200;
+const exchangeRate = 1800;
 let wonClicked = 0;
 let dollarClicked = 0;
 const items = document.getElementsByClassName("item");
@@ -47,9 +47,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateCash(val) {
+        // currentCash 에만 parseFloat 를 쓴 이유 : floor 한 값이 반올림이기때문에
+        // 반올림한걸 빼면 원가격이 마이너스가 될 수도 있기 때문에 parseFloat 한다.
+        // 10.156 - 10.15 = 0.006 이면 2째자리에서 자를거기 때문에 0이 된다.
+        // 계산을 정확하게 하기 위해서임
         currentCash += parseFloat(val); // 20 -> 10900 구매해볼것(13.94, parseFloat대신 Math.floor)
         console.log(currentCash + " " + val + "  " + Math.floor(val * 100) / 100);
         //parsefloat : 소수점까지 다 살려서 반영
+        //floor : 반올림
         let moneyCount;
         // console.log(val);
         if (wonClicked === 1) {
@@ -158,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         document.getElementsByClassName("type").textContent = retType;
 
+        //큰돈부터 잔돈 거슬러 주기 위해 -1로 시작
         for (var i = dividor.length - 1; i >= 0; i--) {
             var amount = parseInt(dividor[i] * 100); //amount는 계속 바뀜 50000 부터 곱하기 100은 달러도 같이 처리할 수 있도록 만들려고
             //소수점 버리고 몫만 가져와야 하니까 paserint 처리
