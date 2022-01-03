@@ -11,7 +11,59 @@
   <link href="css/swiper.min.css" rel="stylesheet" type="text/css" />
 </head>
 
+
+<style>
+  #modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: none;
+  }
+
+  #modal h2 {
+    margin: 0;
+  }
+
+  #modal button {
+    display: inline-block;
+    width: 100px;
+    margin-left: calc(100% - 100px - 10px);
+  }
+
+  #modal .modal_content {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px 10px;
+    background: #fff;
+    border: 2px solid #666;
+  }
+
+  #modal .modal_layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+</style>
+
 <body>
+
+  <div id="modal">
+
+    <div class="modal_content">
+      <img src="" id="ggg">
+      <span class="modal_x" id="fff"> </span>
+      <button type="button" id="modal_close_btn">모달 창 닫기</button>
+    </div>
+
+    <div class="modal_layer"></div>
+  </div>
+
+
   <div class="container">
     <div class="head_part">
       <h1>앨범 자판기</h1>
@@ -38,19 +90,19 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <img class="display_img" src="img/album04.png" alt="아이유 앨범" />
+            <img class="display_img" id="popimg04" src="img/album04.png" alt="아이유 앨범" />
             <div class="item" id="item04">
               <span class="price">70300</span>원
             </div>
           </div>
           <div class="swiper-slide">
-            <img class="display_img" src="img/album05.png" alt="Honne 앨범" />
+            <img class="display_img" id="popimg05" src="img/album05.png" alt="Honne 앨범" />
             <div class="item" id="item05">
               <span class="price">42100</span>원
             </div>
           </div>
           <div class="swiper-slide">
-            <img class="display_img" src="img/album06.png" alt="bts 앨범" />
+            <img class="display_img" id="popimg06" src="img/album06.png" alt="bts 앨범" />
             <div class="item" id="item06">
               <span class="price">10900</span>원
             </div>
@@ -72,7 +124,7 @@
           <button id="50000" value="50000">50000원</button>
         </div>
         <div class="show_amount">
-          <input id="moneyCount" class="show_input" type="text" value="0" readonly />
+          <input id="moneycount" class="show_input" type="text" value="0" readonly />
           <span class="won">원</span>
           <button type="button" class="btn_return">반환</button>
         </div>
@@ -94,7 +146,7 @@
           <button id="100dollar" value="100">$ 100</button>
         </div>
         <div class="show_amount">
-          <input id="dollarCount" class="show_input" type="text" value="0" readonly />
+          <input id="dollarmoneycount" class="show_input" type="text" value="0" readonly />
           <span class="dollar">Dollar</span>
           <button type="button" class="btn_return">반환</button>
         </div>
@@ -102,13 +154,13 @@
     </div>
 
     <div class="receive_part">
-      <div class="receive" id="receiveList">
+      <div class="receive" id="receive_list">
         <h2>받는 곳</h2>
       </div>
       <div class="return">
         <div class="group-won">
           <h2>반환된 금액 <span class="type"></span></h2>
-          <table id="table">
+          <table id="retValuebody">
             <colgroup>
               <col width="50%" />
               <col width="50%" />
@@ -144,10 +196,10 @@
 
 
   </div>
+
   <script src="js/jquery-latest.min.js"></script>
   <script src="js/swiper.min.js"></script>
-  <script src="js/index-final.js"></script>
-
+  <script src="js/index-popup.js"></script>
   <script>
     // const swiper = new Swiper('.swiper-container', {
     //   slidesPerView: 3,

@@ -1,5 +1,5 @@
 let currentCash = 0;
-const exchangeRate = 1200;
+const exchangeRate = 1200.10;
 let wonClicked = 0;
 let dollarClicked = 0;
 const items = document.getElementsByClassName("item");
@@ -8,23 +8,7 @@ const buttons = document.querySelectorAll(".btn_money button");
 const productBtns = document.querySelectorAll(".item");
 const btnReturns = document.querySelectorAll(".btn_return");
 
-function ViewSearch() {
-    document.getElementById("SearchLayer").style.display = 'inline'
-}
-function CloseSearch() {
-    document.getElementById("SearchLayer").style.display = 'none'
-}
-
-
 document.addEventListener("DOMContentLoaded", function () {
-
-    function openPop() {
-        if (pops.id.substr(6) === popups.target.id.substr(3)) {
-            popups.style.display = 'block'
-        }
-    }
-
-
     function handleCash(inputMoney) {
         const query = this.id;
         if (query.indexOf('cent') !== -1 || query.indexOf('dollar') !== -1) {
@@ -98,15 +82,16 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(x);
         x = x.replace("원", "");
 
-        if (dollarClicked === 1) {
-            x = x / exchangeRate;
-        }
         if (currentCash >= x) {
             alert("구매 완료");
 
             printPurchaseImage(this.id);
-            updateCash(x * -1);
 
+            if (wonClicked === 1) {
+                updateCash(x * -1);
+            } else {
+                updateCash(x * -1);
+            }
         } else {
             alert("잔액이 부족합니다. 현금을 넣어주세요.");
         };
@@ -208,21 +193,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-const pops = document.querySelectorAll(".display_img");
+// const pops = document.querySelectorAll(".display_img");
 // const popups = document.querySelectorAll(".popup");
 
-pops.forEach((pop) => {
-    pop.addEventListener('click', openPop);
-});
+// pops.forEach( (pop) => {
+//     pop.addEventListener('click', openPop);
+// });
 
 // console.log(pops[0].id)
-function openPop() {
-    console.log(document.getElementById("SearchLayer"));
-    console.log(document.getElementById("SearchLayer").textContent);
-
-    document.getElementById("abc").textContent = this.alt;
-    document.getElementById("SearchLayer").style.display = 'inline';
-
-}
-
-
+// function openPop () {
+//     if ( pops.id.substr(6) === popups.target.id.substr(3) ) {
+//         popups.style.display = 'block'
+//     }
+// }
