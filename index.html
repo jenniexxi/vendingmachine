@@ -95,7 +95,7 @@
         </div>
         <div class="show_amount">
           <input id="dollarCount" class="show_input" type="text" value="0" readonly />
-          <span class="dollar">Dollar</span>
+          <span class="dollar">$</span>
           <button type="button" class="btn_return">반환</button>
         </div>
       </div>
@@ -121,23 +121,66 @@
             </tbody>
           </table>
           <div class="amount">
-            총 금액 : <span class="sum" id="returnTotal">0</span><span class="type" id="moneyname"> 원</span>
+            총 금액 : <span class="sum" id="returnTotal">0</span><span class="type" id="totalAmount"> 원</span>
           </div>
         </div>
       </div>
     </div>
 
 
-    <div class="popup" id="pop01" style="display: none;">
-      안녕하세요.......1
+
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="content">
+          1111
+        </div>
+      </div>
     </div>
 
-    <div class="popup" id="pop02" style="display: none;">
-      안녕하세요.......2
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="">
+          2222
+        </div>
+      </div>
     </div>
 
-    <div class="popup" id="pop03" style="display: none;">
-      안녕하세요.......3
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="">
+          3333
+        </div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="">
+          44444
+        </div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="">
+          5555555
+        </div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="">
+          666666
+        </div>
+      </div>
     </div>
 
 
@@ -146,7 +189,7 @@
   </div>
   <script src="js/jquery-latest.min.js"></script>
   <script src="js/swiper.min.js"></script>
-  <script src="js/index-final.js"></script>
+  <script src="js/index.js"></script>
 
   <script>
     // const swiper = new Swiper('.swiper-container', {
@@ -165,7 +208,6 @@
     var mySwiper = undefined;
 
     function initSwiper() {
-
       if (ww < 680 && mySwiper == undefined) {
         mySwiper = new Swiper(".swiper-container", {
           slidesPerView: 3,

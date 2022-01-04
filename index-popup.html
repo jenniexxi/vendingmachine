@@ -13,7 +13,7 @@
 
 
 <style>
-  #modal {
+  div[id^="modal0"] {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -21,17 +21,17 @@
     display: none;
   }
 
-  #modal h2 {
+  div[id^="modal0"] h2 {
     margin: 0;
   }
 
-  #modal button {
+  div[id^="modal0"] button {
     display: inline-block;
     width: 100px;
     margin-left: calc(100% - 100px - 10px);
   }
 
-  #modal .modal_content {
+  div[id^="modal0"] .modal_content {
     width: 300px;
     margin: 100px auto;
     padding: 20px 10px;
@@ -39,7 +39,7 @@
     border: 2px solid #666;
   }
 
-  #modal .modal_layer {
+  div[id^="modal0"] .modal_layer {
     position: fixed;
     top: 0;
     left: 0;
@@ -52,17 +52,59 @@
 
 <body>
 
-  <div id="modal">
-
-    <div class="modal_content">
+  <div id="modal01">
+    <div class="modal_content" id="popContent">
       <img src="" id="ggg">
-      <span class="modal_x" id="fff"> </span>
-      <button type="button" id="modal_close_btn">모달 창 닫기</button>
+      <span class="modal_x" id="fff"> aaa</span>
+      <button type="button" id="modal_close_btn01">모달 창 닫기</button>
     </div>
-
     <div class="modal_layer"></div>
   </div>
 
+  <div id="modal02">
+    <div class="modal_content" id="popContent">
+      <img src="" id="ggg">
+      <span class="modal_x" id="fff"> bbb</span>
+      <button type="button" id="modal_close_btn02">모달 창 닫기</button>
+    </div>
+    <div class="modal_layer"></div>
+  </div>
+
+  <div id="modal03">
+    <div class="modal_content">
+      <img src="" id="ggg">
+      <span class="modal_x" id="fff"> ccc</span>
+      <button type="button" id="modal_close_btn03">모달 창 닫기</button>
+    </div>
+    <div class="modal_layer"></div>
+  </div>
+
+  <div id="modal04">
+    <div class="modal_content">
+      <img src="" id="ggg">
+      <span class="modal_x" id="fff"> ddd</span>
+      <button type="button" id="modal_close_btn04">모달 창 닫기</button>
+    </div>
+    <div class="modal_layer"></div>
+  </div>
+
+  <div id="modal05">
+    <div class="modal_content">
+      <img src="" id="ggg">
+      <span class="modal_x" id="fff"> eee</span>
+      <button type="button" id="modal_close_btn05">모달 창 닫기</button>
+    </div>
+    <div class="modal_layer"></div>
+  </div>
+
+  <div id="modal06">
+    <div class="modal_content">
+      <img src="" id="ggg">
+      <span class="modal_x" id="fff"> fff</span>
+      <button type="button" id="modal_close_btn06">모달 창 닫기</button>
+    </div>
+    <div class="modal_layer"></div>
+  </div>
 
   <div class="container">
     <div class="head_part">

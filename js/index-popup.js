@@ -7,17 +7,18 @@ const price = document.getElementsByClassName("price");
 const buttons = document.querySelectorAll(".btn_money button");
 const productBtns = document.querySelectorAll(".item");
 const btnReturns = document.querySelectorAll(".btn_return");
+const popBtn = document.querySelectorAll(".modal_content button");
 
 function openPop() {
-    var layer = document.getElementById("modal");
-    document.getElementById("fff").textContent = this.alt;
-    layer.style.display = "block";
+    var id = this.id.replace("popimg", "modal");
+    document.getElementById(id).style.display = "block";
 }
 
-document.getElementById("modal_close_btn").onclick = function () {
-    document.getElementById("modal").style.display = "none";
+function closePop() {
+    var id = this.id.replace("modal_close_btn", "modal");
+    console.log(id);
+    document.getElementById(id).style.display = "none";
 }
-
 
 function handleCash(inputMoney) {
     const query = this.id;
@@ -44,7 +45,7 @@ function handleCash(inputMoney) {
     //         return;
     //     }
     //     wonClicked = 1;
-    //    updateCash(this.value);
+    // 	updateCash(this.value);
     // } else { //dollar
     //     if(wonClicked === 1 ) {
     //         alert("you cannot click dollar");
@@ -208,6 +209,12 @@ pops.forEach((pop) => {
     pop.addEventListener('click', openPop);
 });
 
+popBtn.forEach((btn) => {
+    btn.addEventListener('click', closePop);
+});
+
+
+
 // console.log(pops[0].id)
  //function openPop () {
 //console.log(document.getElementById("SearchLayer"));
@@ -215,3 +222,8 @@ pops.forEach((pop) => {
 
 //document.getElementById("abc").textContent= this.alt;
 //document.getElementById("SearchLayer").style.display= 'inline';
+
+
+
+
+
