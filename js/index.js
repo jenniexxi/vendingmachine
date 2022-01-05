@@ -222,6 +222,43 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+
+
+    // swiper
+    let ww = window.innerWidth;
+    let mySwiper = undefined;
+
+    function initSwiper() {
+        // mySwiper == undefined
+        if (ww < 680 && mySwiper == undefined) {
+            mySwiper = new Swiper(".swiper-container", {
+                slidesPerView: 3,
+                spaceBetween: 10,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        } else if (ww >= 680 && mySwiper != undefined) {
+            // mySwiper == object
+            mySwiper.destroy();
+            mySwiper = undefined;
+        }
+    }
+
+    initSwiper();
+
+    window.addEventListener('resize', function () {
+        ww = window.innerWidth;
+        initSwiper();
+    });
+    // e swiper
+
+
+
+
+
+
 });
 
 

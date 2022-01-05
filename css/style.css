@@ -2,12 +2,12 @@
 @import url("reset.css");
 
 .container {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 30px 30px 50px;
+  padding: 30px 30px 150px;
   border-radius: 3px;
   background: #cebad9;
-  margin-bottom: 50px;
 }
 .display_part {
   /* overflow: hidden; */
@@ -19,7 +19,7 @@
 }
 
 .head_part h1 {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 600;
   text-align: center;
   padding: 0 0 20px;
@@ -103,12 +103,16 @@
   height: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 30px;
 }
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
   border-radius: 3px;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets {
+  bottom: 0;  
 }
 
 .receive_part {
@@ -122,6 +126,7 @@
   width: 100px;
   height: 100px;
   display: block;
+  margin-bottom: 10px;
 }
 .receive_part .return{
   float: left;
@@ -166,17 +171,38 @@
 }
 .modal-content {
   background: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
+  margin: 10% auto;
+  padding: 25px;
   border: 1px solid #d9d9d9;
-  width: 80%
+  width: 80%;
+  position: relative;
+  border-radius: 3px;
 }
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  color: #000;
+  font-size: 24px;
   cursor: pointer;
+}
+.modal h3 {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 0;
+}
+.modal img {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+.modal .desc {
+  font-size: 12px;
+  padding-top: 20px;
+}
+.modal .title {
+  font-weight: 600;
+  padding-bottom: 20px;
 }
 
 
@@ -184,6 +210,9 @@
 
 
 @media screen and (min-width: 680px) {
+  .swiper-container {
+    padding-bottom: 0;
+  }
   .swiper-container .swiper-wrapper {
     display: inline-block;
     padding-left: 2%;
